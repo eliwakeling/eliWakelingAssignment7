@@ -2,8 +2,8 @@
 <project version="2">
 	<pipeline>
 		<pass name="Hello" type="shader" active="true">
-			<shader type="vs" path="shaders\HelloVS.glsl" entry="main" />
-			<shader type="ps" path="shaders\HelloPS.glsl" entry="main" />
+			<shader type="vs" path="shaders\assignment7_HelloVS.glsl" entry="main" />
+			<shader type="ps" path="shaders\assignment7_HelloPS.glsl" entry="main" />
 			<inputlayout>
 				<item value="Position" semantic="POSITION" />
 				<item value="Normal" semantic="NORMAL" />
@@ -16,6 +16,8 @@
 					<width>1</width>
 					<height>1</height>
 					<depth>1</depth>
+					<y>0.276025176</y>
+					<z>-0.568804801</z>
 					<topology>TriangleList</topology>
 				</item>
 			</items>
@@ -55,7 +57,11 @@
 			<macros />
 		</pass>
 	</pipeline>
-	<objects />
+	<objects>
+		<object type="texture" path="..\..\Downloads\earth.jpg" vflip="false" min_filter="Linear" mag_filter="Nearest" wrap_s="Repeat" wrap_t="Repeat">
+			<bind slot="0" name="Hello" />
+		</object>
+	</objects>
 	<cameras />
 	<settings>
 		<entry type="property" name="sphere" item="pipe" />
@@ -66,8 +72,8 @@
 		<entry type="pinned" name="uViewProjMat" owner="Hello" />
 		<entry type="camera" fp="false">
 			<distance>6</distance>
-			<pitch>28</pitch>
-			<yaw>317</yaw>
+			<pitch>11</pitch>
+			<yaw>266</yaw>
 			<roll>360</roll>
 		</entry>
 		<entry type="clearcolor" r="0" g="0" b="0" a="0" />
